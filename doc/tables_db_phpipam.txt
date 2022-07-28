@@ -1,0 +1,67 @@
+ipaddresses
++-----------------------+------------------+------+-----+---------------------+-------------------------------+
+| Field                 | Type             | Null | Key | Default             | Extra                         |
++-----------------------+------------------+------+-----+---------------------+-------------------------------+
+| id                    | int(11)          | NO   | PRI | NULL                | auto_increment                |
+| subnetId              | int(11) unsigned | YES  | MUL | NULL                |                               |
+| ip_addr               | varchar(100)     | NO   | MUL | NULL                |                               |
+| is_gateway            | tinyint(1)       | YES  |     | 0                   |                               |
+| description           | varchar(64)      | YES  |     | NULL                |                               |
+| hostname              | varchar(255)     | YES  |     | NULL                |                               |
+| mac                   | varchar(20)      | YES  |     | NULL                |                               |
+| owner                 | varchar(128)     | YES  |     | NULL                |                               |
+| state                 | int(3)           | YES  |     | 2                   |                               |
+| switch                | int(11) unsigned | YES  |     | NULL                |                               |
+| location              | int(11) unsigned | YES  | MUL | NULL                |                               |
+| port                  | varchar(32)      | YES  |     | NULL                |                               |
+| note                  | text             | YES  |     | NULL                |                               |
+| lastSeen              | datetime         | YES  |     | 1970-01-01 00:00:01 |                               |
+| excludePing           | binary(1)        | YES  |     | 0                   |                               |
+| PTRignore             | binary(1)        | YES  |     | 0                   |                               |
+| PTR                   | int(11) unsigned | YES  |     | 0                   |                               |
+| firewallAddressObject | varchar(100)     | YES  |     | NULL                |                               |
+| editDate              | timestamp        | YES  |     | NULL                | on update current_timestamp() |
+| customer_id           | int(11) unsigned | YES  | MUL | NULL                |                               |
++-----------------------+------------------+------+-----+---------------------+-------------------------------+
+
+
+
+subnets;
++-----------------------+------------------+------+-----+---------+-------------------------------+
+| Field                 | Type             | Null | Key | Default | Extra                         |
++-----------------------+------------------+------+-----+---------+-------------------------------+
+| id                    | int(11)          | NO   | PRI | NULL    | auto_increment                |
+| subnet                | varchar(255)     | YES  |     | NULL    |                               |
+| mask                  | varchar(3)       | YES  |     | NULL    |                               |
+| sectionId             | int(11) unsigned | YES  | MUL | NULL    |                               |
+| description           | text             | YES  |     | NULL    |                               |
+| linked_subnet         | int(11) unsigned | YES  |     | NULL    |                               |
+| firewallAddressObject | varchar(100)     | YES  |     | NULL    |                               |
+| vrfId                 | int(11) unsigned | YES  | MUL | NULL    |                               |
+| masterSubnetId        | int(11) unsigned | NO   | MUL | 0       |                               |
+| allowRequests         | tinyint(1)       | YES  |     | 0       |                               |
+| vlanId                | int(11) unsigned | YES  |     | NULL    |                               |
+| showName              | tinyint(1)       | YES  |     | 0       |                               |
+| device                | int(10) unsigned | YES  |     | 0       |                               |
+| permissions           | varchar(1024)    | YES  |     | NULL    |                               |
+| pingSubnet            | tinyint(1)       | YES  |     | 0       |                               |
+| discoverSubnet        | binary(1)        | YES  |     | 0       |                               |
+| resolveDNS            | tinyint(1)       | YES  |     | 0       |                               |
+| DNSrecursive          | tinyint(1)       | YES  |     | 0       |                               |
+| DNSrecords            | tinyint(1)       | YES  |     | 0       |                               |
+| nameserverId          | int(11)          | YES  |     | 0       |                               |
+| scanAgent             | int(11)          | YES  |     | NULL    |                               |
+| customer_id           | int(11) unsigned | YES  | MUL | NULL    |                               |
+| isFolder              | tinyint(1)       | YES  |     | 0       |                               |
+| isFull                | tinyint(1)       | YES  |     | 0       |                               |
+| state                 | int(3)           | YES  |     | 2       |                               |
+| threshold             | int(3)           | YES  |     | 0       |                               |
+| location              | int(11) unsigned | YES  | MUL | NULL    |                               |
+| editDate              | timestamp        | YES  |     | NULL    | on update current_timestamp() |
+| lastScan              | timestamp        | YES  |     | NULL    |                               |
+| lastDiscovery         | timestamp        | YES  |     | NULL    |                               |
++-----------------------+------------------+------+-----+---------+-------------------------------+
+
+
+
+
